@@ -1,0 +1,260 @@
+What is Docker?
+	A PLATFORM
+		for Containers
+	Free and Open source.
+	AKA Docker Engine
+	Release
+		Community -- PART OF THE TRAINING
+		Enterprise
+	Latest 19.X
+	
+
+What is Containers?
+	Lightweight independnt isolcated app runtime env.
+	USER SPACE
+		has their
+			MOUNT
+			NETWORK
+			PROCESS MAP.
+		Managed by DOCKER.
+				DOCKER Take these capabiblities from KERNAL NS
+
+   1  clear
+    2  ls
+    3  sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+    4  sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    5  sudo yum install –y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    6  sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
+    7  sudo yum install -y docker-ce
+    8  sudo systemctl enable docker
+    9  sudo systemctl start docker
+   10  clear
+   11  which docker
+   12  ps -eaf | grep docker
+   13  clear
+   14  ps -eaf | grep docker
+   15  clear
+   16  ls
+   17  docker
+   18  clear
+   19  docker version
+   20  docker help
+   21  clear
+   22  ls
+   23  clear
+   24  ps -eaf | grep docker
+   25  ps
+   26  ps -eaf
+   27  ps
+   28  ps -eaf
+   29  ps
+   30  clear
+   31  clear
+   32  docker run -d jenkins
+   33  clear
+   34  docker ps
+   35  ps -eaf | grep docker
+   36  ps -eaf | grep 10719
+   37  ps -eaf | grep docker
+   38  clear
+   39  ps -eaf | grep docker
+   40  docker run -d jenkins
+   41  ps -eaf | grep docker
+   42  clear
+   43  ls
+   44  clear
+   45  ifconfig
+   46  clear
+   47  docker ps
+   48  docker inspect 2e861ae029f2 | grep ip
+   49  docker inspect 2e861ae029f2 | grep -i ip
+   50  docker inspect 6705a16a6def | grep -i ip
+   51  clear
+   52  docker ps
+   53  df -kh
+   54  clear
+   55  docker ps
+   56  docker exec 2e861ae029f2 df -kh
+   57  docker exec 6705a16a6def df -kh
+   58  clear
+   59  docker exec 2e861ae029f2 touch /var/jenkins_home/rajesh.txt
+   60  docker ps
+   61  docker exec 2e861ae029f2 ls /var/jenkins_home/
+   62  docker exec 6705a16a6def ls /var/jenkins_home/
+   63  clear
+   64  docker ps
+   65  docker exec 2e861ae029f2 ps -eaf
+   66  docker exec 6705a16a6def ps -eaf
+   67  clear
+   68  docker info
+   69  clear
+   70  history
+
+
+Other tools?
+https://www.devopsschool.com/blog/list-of-top-container-runtime-interface-projects/
+
+Artchitecture of Docker?
+=================================================
+HUMEN -> Docker Client ----REST API----> Docker Deamon(Server) ------ContainerD---------> Kernal --> 4 
+
+NS
+
+=================================================
+How to install it?
+------------------------
+RHEL-7.5_HVM_GA-20180322-x86_64-1-Hourly2-GP2 (ami-5b673c34)
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-
+
+rhel.html
+13.233.130.225
+ec2-user
+- DOCKER NEED ROOT - 
+	OR
+- ANY USER WHO IS PART OF GROUP CALLED "docker"
+
+DOCKER COMPONENTS
+=================================
+Docker Engine
+	Docker Client ----REST API----> Docker Deamon(Server)
+Docker Image
+	APP RUN TIME ENV
+	Whatever you have in Image ----> You see inside a container.
+Docker Registry
+	PUB
+		hub.docker.com
+			Repostory
+				Each repo would container one image  - multiple version
+		gr
+		ecr
+
+	PVT
+		artifactory
+		nexus
+		docker registry
+Docker Container
+	RUN MOMENT you RUN image - you get one container.
+	From One image- you can run multiple container.
+
+
+
+Docker workflow
+-------------------
+Humen -> RUN -> CLIENT -> DD --> LOCAL REPO (DO I HAVE THAT IMAGE?) --> Remote repo --> Create
+
+Container Workflow
+-------------------------
+download->create->start->stop->restart->pause->unpause->kill->remove
+
+ps vs docker ps vs docker ps -a
+=====================
+docker images
+
+
+tomcat
+skype
+nodejs
+nginx
+mysql
+jenkins
+post
+jira
+maven
+jdk
+jboss
+ws
+memcache
+git
+svn
+oracle
+ubuntu
+centos
+rehel
+fedo
+windows
+dont
+asp
+mssql
+mysql
+
+jenkins
+	java 
+		os
+	WEB  	BUILD NODE
+	8080	50000
+--------------------------
+
+  71  clear
+   72  docker pull jenkins
+   73  docker images
+   74  clear
+   75  docker create jenkins
+   76  docker ps
+   77  docker stop 2e861ae029f2  6705a16a6def
+   78  clear
+   79  docker rm 2e861ae029f2  6705a16a6def
+   80  docker ps
+   81  docker ps -a
+   82  docker start 2961668eb163
+   83  docker ps -a
+   84  docker stop 2961668eb163
+   85  docker ps -a
+   86  clear
+   87  docker restart 2961668eb163
+   88  docker ps -a
+   89  docker ps -a
+   90  docker stats 2961668eb163
+   91  docker pause 2961668eb163
+   92  docker stats 2961668eb163
+   93  docker ps -a
+   94  docker unpause 2961668eb163
+   95  docker ps -a
+   96  docker stats 2961668eb163
+   97  docker ps -a
+   98  docker kill 2961668eb163
+   99  docker ps -a
+  100  docker rm 2961668eb163
+  101  docker ps -a
+  102  history
+
+
+run
+=========================
+download->create->start->YOU BECOME A CONTAINER.
+
+run -d [DEATTACHED MODE]
+=========================
+download->create->start->DO NOT BCOME
+
+===========================================================================
+How to consume containers?
+================================================
+access over web - http  -- ip 
+$ docker run -d  -p 8080:8080 jenkins
+$ docker run -d  -p 8090:8080 jenkins
+
+access over ssh - IP ADD - U - PAS
+
+PID 1 is magical for containers
+Pid 1 IS RUNING - cONTAINER IS RUNNING ---
+pid 1 CAN BE ANYTHING.
+
+goinside and use shell - GO inside and bash
+-------------------------------------------
+EXEC
+	- YOU CAN EXECUTE AN EXECUTABLES INSDIEDE A CONTAINER.
+	BUT execute /bin/bash in "it" mode.
+
+ATTACH 
+	IT GET ATTACHED TO PID 1
+
+
+How to come out of container safeltt?
+CNRL + P + Q
+
+
+
+
+
+
+
