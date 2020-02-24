@@ -252,6 +252,70 @@ EXEC
 ATTACH 
 	IT GET ATTACHED TO PID 1
 
+ 105  who
+  106  ps
+  107  docker run jenkins
+  108  clear
+  109  docker run tomcat
+  110  clear
+  111  docker run -d jenkins
+  112  docker ps
+  113  docker run -d tomcat
+  114  docker ps
+  115  clear
+  116  ls
+  117  docker ps
+  118  docker inspect 3683ecf445f6 | grep -i ip
+  119  clear
+  120  curl http://172.17.0.2
+  121  curl http://172.17.0.2:8080
+  122  clear
+  123  docker ps
+  124  docker stop  49b3a6e7f0de 3683ecf445f6
+  125  clear
+  126  docker rm  49b3a6e7f0de 3683ecf445f6
+  127  clear
+  128  docker ps
+  129  docker run -d  -p 8080:8080 jenkins
+  130  docker run -d  -p 8080:8080 jenkins
+  131  docker run -d  -p 8090:8080 jenkins
+  132  docker ps
+  133  docker run -d jenkins
+  134  clear
+  135  docker ps
+  136  CLEAR
+  137  lc
+  138  clear
+  139  docker ps
+  140  docker exec b4a2ae457c65 ls
+  141  docker exec b4a2ae457c65 df
+  142  clear
+  143  docker exec b4a2ae457c65 ps
+  144  docker exec b4a2ae457c65 ddddd
+  145  clear
+  146  docker exec b4a2ae457c65 /bin/bash
+  147  docker exec -it  b4a2ae457c65 /bin/bash
+  148  clear
+  149  docker ps
+  150  docker attach b4a2ae457c65
+  151  docker ps
+  152  docker ps
+  153  docker ps -a
+  154  clear
+  155  docker pull ubuntu
+  156  clear
+  157  ls
+  158  docker stop $(docker ps -aq)
+  159  docker rm $(docker ps -aq)
+  160  clear
+  161  docker ps -a
+  162  docker run ubuntu
+  163  docker ps
+  164  docker ps -a
+  165  docker run -it ubuntu
+  166  docker ps -a
+  167  history
+
 
 How to come out of container safeltt?
 CNRL + P + Q
