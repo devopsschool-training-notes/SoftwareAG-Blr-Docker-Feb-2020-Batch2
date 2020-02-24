@@ -347,6 +347,78 @@ sudo -s
 Location - https://www.devopsschool.com/notes/docker/2019/
 PPK -  	rajesh-mumbai.ppk
 PEM -  rajesh-mumbai.pem
+==================================================
+https://www.devopsschool.com/tutorial/docker/commands/
+
+
+cp
+ 180  touch devopsschool.txt
+  181  ls
+  182  docker ps
+  183  docker cp devopsschool.txt 9b85c4444c0f:/opt
+  184  docker exec 9b85c4444c0f ls /opt/
+  185  clear
+  186  ls
+  187  rm -rf devopsschool.txt
+  188  ls
+  189  docker ps
+  190  docker cp 9b85c4444c0f:/opt/devopsschool.txt .
+  191  ls
+  192  clear
+  193  ls
+diff
+192  clear
+  193  ls
+  194  history
+  195  clear
+  196  docker ps
+  197  docker diff 9b85c4444c0f
+  198  docker diff a22c8a459069
+  199  history
+
+
+ 201  docker ps
+  202  docker port a22c8a459069
+  203  docker port 9b85c4444c0f
+  204  clear
+  205  docker ps
+  206  docker rename 9b85c4444c0f raj1
+  207  docker ps
+  208  docker run --name raj2 -itd ubuntu
+  209  docker ps
+  210  docker help run
+  211  history
+
+
+
+ 212  clear
+  213  docker ps
+  214  docker logs 2c50548e78e7
+  215  docker logs a22c8a459069
+  216  clear
+  217  docker ps
+  218  docker stats
+  219  docker stats 2c50548e78e7
+  220  clear
+  221   docker ps
+  222  ps eaf | grep docker
+  223  clear
+  224  ps -eaf | grep docker
+  225  docker top
+  226  clear
+  227  docker ps
+  228  ps -eaf | grep docker
+  229  docker top 2c50548e78e7
+  230  clear
+  231  docker events
+  232  clear
+  233  history
+
+Task 1 - How to set RAM only for container.
+Task 2 - update	Update configuration of one or more containers
+Task 3 - wait	Block until one or more containers stop, then print their exit codes
+Task 4 - https://www.devopsschool.com/tutorial/docker/labs/docker/docker-lab-6-link.html
+
 
 
 
