@@ -1,3 +1,7 @@
+http://bit.ly/2upeHG5
+
+
+
 What is Docker?
 	A PLATFORM
 		for Containers
@@ -251,6 +255,34 @@ ATTACH
 
 How to come out of container safeltt?
 CNRL + P + Q
+
+1	13.232.50.29
+2	13.235.9.51
+3	13.235.245.212
+4	13.232.75.51
+5	3.6.40.138
+6	13.234.116.83
+7	13.127.209.90
+8	13.127.133.189
+9	13.235.23.102
+10	13.234.37.53
+11	13.234.232.195
+12	13.234.115.77
+13	13.235.99.53
+14	13.233.67.215
+15	13.233.81.149
+16	13.232.78.29
+17	15.206.72.100
+18	13.235.245.4
+19	35.154.71.243
+20	13.235.246.74
+
+user name - ec2-user
+sudo -s
+
+Location - https://www.devopsschool.com/notes/docker/2019/
+PPK -  	rajesh-mumbai.ppk
+PEM -  rajesh-mumbai.pem
 
 
 
