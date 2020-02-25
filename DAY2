@@ -404,6 +404,168 @@ RUN
 19	3.6.93.14
 20	13.233.106.147
 
+============================================
+Container are EPH.
+
+Docker support VOLUME
+		volume	/var/lib/docker/volumes
+		mount	ANY WHERE IN HOST MACHINE
+		tmpfs
+
+https://www.devopsschool.com/tutorial/docker/
+https://www.devopsschool.com/blog/understand-docker-volume-from-beginner-to-deep-dive-level/
+
+   52  cd /var/lib/
+   53  cd docker
+   54  find . -name devopsschool.txt
+   55  docker rm 05c7a198d45
+   56  find . -name devopsschool.txt
+   57  clear
+   58  ls
+   59  clear
+   60  ls
+   61  cd volumes/
+   62  ls
+   63  pwd
+   64  cd 1e4e90a0e1c84fb5bddc0748d9167f96226b53f5434f86e1bfe069c987f820bc
+   65  ls
+   66  cd _data/
+   67  ls
+   68  clear
+   69  ls
+   70  clear
+   71  cd ..
+   72  ls
+   73  cd ..
+   74  ls
+   75  docker run -d jenkins
+   76  clear
+   77  ls
+   78  docker run -d jenkins
+   79  ls
+   80  docker ps -a
+   81  docker stop 5773b5962309 91b219fd16f3
+   82  docker rm  5773b5962309 91b219fd16f3
+   83  ls
+   84  clear
+   85  ls
+   86  docker volume
+   87  docker volume ls
+   88  docker volume rm c128f6010aa50d609eaf92adf20579b6e0c60f387f7c76f65ac62eff05788445
+   89  docker volume ls
+   90  clear
+   91  docker volume
+   92  docker volume prune
+   93  docker volume
+   94  docker volume ls
+   95  ls
+   96  docker volume create raj
+   97  docker volume create dev
+   98  ls
+   99  clear
+  100  ls
+  101  docker volume ls
+  102  docker run -it -v raj:/opt/rrr ubuntu
+  103  clear
+  104  ls
+  105  cd raj/_data/
+  106  ls
+  107  touch rajesh.txt
+  108  docker ps
+  109  docker attach 2b865a5b07d8
+  110  clear
+  111  ls
+  112  cd ..
+  113  ls
+  114  c d ..
+  115  ls
+  116  cd ..
+  117  ls
+  118  clear
+  119  docker ps
+  120  docker stop 2b865a5b07d8
+  121  docker rm 2b865a5b07d8
+  122  ls
+  123  cd raj/_data/
+  124  ks
+  125  ls
+  126  clear
+  127  docker run -itd -v raj:/opt/ddd ubuntu
+  128  docker run -itd -v raj:/opt/dddd ubuntu
+  129  docker ps
+  130  docker exec b38066ef27f2 df -kh
+  131  docker exec c0f637dec7a2 df -kh
+  132  df -kh
+  133  docker run -it -v raj:/opt ubuntu
+  134  history
+
+=====================================
+
+HOW TO RUN CONTAINER ---> PID 1---> IN DOCKERFILE?
+=====================================
+CMD
+	CMD CAN BE REPLACED DURING RUN TIME.
+
+ENTRYPOINT
+	ENTRYPOINT CAN NOT BE REPLACED
+	ARGUMENT applied during run time get added a parameter to ENTRYPOINT
+
+
+	/bin/tini -- /usr/local/bin/jenkins.sh  
+	/bin/tini -- /usr/local/bin/jenkins.sh rrrr  
+
+https://www.devopsschool.com/tutorial/docker/dockerfile/dockerfile-example-sample-lab.html
+
+
+Docker netoworking
+========================================
+	BRIDGE
+	HOSTONLY
+	NONE
+	PLUGINS---- MANY MORE.
+
+
+
+ 179  docker network
+  180  docker network ls
+  181  docker network inspect aa52af381960
+  182  docker ps
+  183  docker inspect 6f8f6d23a618 | grep -i ip
+  184  docker ps
+  185  ifconfig
+  186  docker ps
+  187  clear
+  188  docker ps -a
+  189  docker stop $(docker ps -a -q)
+  190  docker rm $(docker ps -a -q)
+  191  clear
+  192  docker ps -a
+  193  ifconfig
+  194  clear
+  195  docker run -itd ubuntu
+  196  ifconfig
+  197  clear
+  198  docker network
+  199  docker network create qa --driver=bridge
+  200  docker network ls
+  201  clear
+  202  docker network ls
+  203  docker inspect qa
+  204  clear
+  205  docker ps -a
+  206  docker run -itd --net=qa ubuntu
+  207  dockerps
+  208  docker ps
+  209  docker inspect 4bd6d4c01f62
+  210  docker run -itd --net=host ubuntu
+  211  docker run -itd --net=none ubuntu
+  212  docker run -itd --net=host ubuntu
+  213  docker ps
+  214  history
+
+
+
+
 
 
 
